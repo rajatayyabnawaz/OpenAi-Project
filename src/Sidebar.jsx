@@ -17,7 +17,7 @@ const Sidebar = ({ onToggle }) => {
 
   return (
     <div
-      className={`h-screen ${
+      className={`h-[95vh] ${
         isOpen ? "w-44" : "w-20"
       } bg-white dark:bg-gray-800 shadow-md transition-all duration-300 flex flex-col justify-between`}
     >
