@@ -6,7 +6,7 @@ const Man = () => {
   const { input, setInput, chat, loading, onSent } = useContext(Context);
 
   return (
-    <div className="min-h-[90vh] flex flex-col bg-gray-100">
+    <div className="min-h-[93vh] flex flex-col bg-gray-100">
       {/* Top Bar */}
       <div className="w-full flex justify-between items-center px-6 py-4 border-b bg-white shadow-md">
         <p className="text-2xl font-bold text-gray-800">Maryam Zulfiqar</p>
