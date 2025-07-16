@@ -34,9 +34,10 @@ const App = () => {
                 <Route path="/history" element={<History />} />
                 <Route path="/settings" element={<Setting />} />
               </Routes>
+               <Footer/>
             </div>
           </div>
-          <Footer/>
+         
         </Router>
       </DarkModeProvider>
     </ContextProvider>
