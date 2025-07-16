@@ -1,29 +1,17 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "./assets/assets";
 import { Context } from "./Context";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Sidebar = ({ onToggle }) => {
+const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const { allTopics, loadChat, deleteChat, startNewChat } = useContext(Context);
 
-  // Notify parent (App.jsx) when sidebar opens or closes
-  useEffect(() => {
-    if (onToggle) {
-      onToggle(isOpen);
-    }
-  }, [isOpen, onToggle]);
-
   return (
-   <div
-  className={`h-[93vh] ${
-    isOpen ? "w-44" : "w-20"
-  } bg-white text-black shadow-md transition-all duration-300 flex flex-col justify-between`}
->
-
-      {/* Top menu toggle */}
-      <div className="flex justify-end p-2">
+    <div className={`h-screen bg-white p-4 shadow-md transition-all duration-300 ${isOpen ? "w-64" : "w-20"} flex flex-col justify-between`}>
+      {/* Menu */}
+      <div className="flex justify-between items-center">
         <img
           src={assets.menu_icon}
           alt="menu"
@@ -33,31 +21,29 @@ const Sidebar = ({ onToggle }) => {
       </div>
 
       {/* New Chat */}
-      <div className="mt-2 px-2">
-        <Link to="/">
-          <button
-            onClick={startNewChat}
-            className="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded w-full"
-          >
-            <img src={assets.plus_icon} alt="new" className="w-5 h-5" />
-            {isOpen && <span className="text-sm">New Chat</span>}
-          </button>
-        </Link>
+      <div className="mt-4">
+        <button
+          onClick={startNewChat}
+          className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded w-full"
+        >
+          <img src={assets.plus_icon} alt="new" className="w-5 h-5" />
+          {isOpen && <span>New Chat</span>}
+        </button>
       </div>
 
       {/* Chat Topics */}
-      <div className="mt-4 px-2 flex-1 overflow-y-auto">
+      <div className="mt-4 flex-1 overflow-y-auto">
         {isOpen && allTopics.length > 0 && (
           <p className="text-gray-500 text-sm mb-2">Topics</p>
         )}
         {allTopics.map((topic) => (
           <div
             key={topic}
-            className="group flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer"
+            className="group flex justify-between items-center hover:bg-gray-100 p-2 rounded cursor-pointer"
           >
             <div
               onClick={() => loadChat(topic)}
-              className="text-sm text-gray-800 dark:text-white truncate w-full pr-2"
+              className="text-sm text-gray-800 truncate w-full pr-2"
             >
               {topic}
             </div>
@@ -71,27 +57,18 @@ const Sidebar = ({ onToggle }) => {
       </div>
 
       {/* Bottom Links */}
-      <div className="px-2 py-4 space-y-2">
-        <Link
-          to="/help"
-          className="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded"
-        >
+      <div className="space-y-4">
+        <Link to="/help" className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded">
           <img src={assets.message_icon} alt="help" className="w-5 h-5" />
-          {isOpen && <span className="text-sm">Help</span>}
+          {isOpen && <span>Help</span>}
         </Link>
-        <Link
-          to="/history"
-          className="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded"
-        >
+        <Link to="/history" className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded">
           <img src={assets.history_icon} alt="history" className="w-5 h-5" />
-          {isOpen && <span className="text-sm">History</span>}
+          {isOpen && <span>History</span>}
         </Link>
-        <Link
-          to="/settings"
-          className="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded"
-        >
+        <Link to="/settings" className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded">
           <img src={assets.setting_icon} alt="settings" className="w-5 h-5" />
-          {isOpen && <span className="text-sm">Settings</span>}
+          {isOpen && <span>Settings</span>}
         </Link>
       </div>
     </div>
