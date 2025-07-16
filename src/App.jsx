@@ -36,7 +36,7 @@ const App = () => {
               </Routes>
             </div>
           </div>
-          <Footer/>
+          
         </Router>
       </DarkModeProvider>
     </ContextProvider>
