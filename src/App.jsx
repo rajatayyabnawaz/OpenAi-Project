@@ -7,6 +7,7 @@ import History from './History';
 import Setting from './Setting';
 import ContextProvider from './Context';
 import DarkModeProvider from './DarkModeContext';
+import Footer from './Footer';
 
 const App = () => {
   const [sidebarWidth, setSidebarWidth] = useState('w-44'); // default
@@ -35,6 +36,7 @@ const App = () => {
               </Routes>
             </div>
           </div>
+          <Footer/>
         </Router>
       </DarkModeProvider>
     </ContextProvider>
