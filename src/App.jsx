@@ -20,7 +20,7 @@ const App = () => {
     <ContextProvider>
       <DarkModeProvider>
         <Router>
-          <div className="min-h-screen flex bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+          <div className="h-[90vh] flex bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
             {/* Sidebar */}
             <div className={`fixed top-0 left-0 h-screen z-10`}>
               <Sidebar onToggle={handleSidebarToggle} />
