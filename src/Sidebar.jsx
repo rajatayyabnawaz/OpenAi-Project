@@ -22,13 +22,15 @@ const Sidebar = () => {
 
       {/* New Chat */}
       <div className="mt-4">
-        <button
-          onClick={startNewChat}
-          className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded w-full"
-        >
-          <img src={assets.plus_icon} alt="new" className="w-5 h-5" />
-          {isOpen && <span>New Chat</span>}
-        </button>
+        <Link to="/">
+  <button
+    onClick={startNewChat}
+    className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded w-full"
+  >
+    <img src={assets.plus_icon} alt="new" className="w-5 h-5" />
+    {isOpen && <span>New Chat</span>}
+  </button>
+</Link>
       </div>
 
       {/* Chat Topics */}
