@@ -6,12 +6,12 @@ const Man = () => {
   const { input, setInput, chat, loading, onSent } = useContext(Context);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-[95vh] flex flex-col bg-gray-100">
       {/* Top Bar */}
       <div className="w-full flex justify-between items-center px-6 py-4 border-b bg-white shadow-md">
-        <p className="text-2xl font-bold text-gray-800">Maryam Zulfiqar</p>
+        <p className="text-2xl font-bold text-gray-800">Raja Tayyab</p>
         <img
-          src={assets?.user_icon}
+          src={assets?.gemini_icon}
           alt="User"
           className="w-10 h-10 rounded-full object-cover border border-gray-300"
         />
@@ -21,7 +21,7 @@ const Man = () => {
       <div className="flex-1 flex flex-col gap-4 px-4 sm:px-8 py-6 overflow-y-auto">
         {chat.length === 0 && (
           <div className="flex flex-col items-center justify-center text-center mt-20 text-gray-600 space-y-2 px-4">
-            <h1 className="text-3xl font-bold text-gray-800">Hello Maryam 👋</h1>
+            <h1 className="text-3xl font-bold text-gray-800">Hello Tayyab 👋</h1>
             <h2 className="text-xl font-semibold text-gray-700">
               I am your personal OpenAI assistant.
             </h2>
