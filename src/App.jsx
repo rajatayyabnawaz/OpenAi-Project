@@ -13,23 +13,22 @@ const App = () => {
     <ContextProvider>
       <DarkModeProvider>
         <Router>
-          
-            <div className="flex fixed top-0 left-0 h-screen w-20 bg-white dark:bg-gray-800 shadow-md z-10">
+          <div className="min-h-screen flex bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+            {/* Sidebar Fixed */}
+            <div className="fixed top-0 left-0 h-screen w-44 bg-white dark:bg-gray-800 shadow-md z-10">
               <Sidebar />
-             
-            
+            </div>
 
-          
-            <div >
+            {/* Main Content */}
+            <div className="ml-64 w-full h-screen overflow-y-auto">
               <Routes>
-                <Route path='/' element={<Man/>}/>
+                <Route path="/" element={<Man />} />
                 <Route path="/help" element={<Help />} />
                 <Route path="/history" element={<History />} />
                 <Route path="/settings" element={<Setting />} />
               </Routes>
-              </div>
-              </div>
-          
+            </div>
+          </div>
         </Router>
       </DarkModeProvider>
     </ContextProvider>
